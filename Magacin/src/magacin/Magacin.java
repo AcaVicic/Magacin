@@ -14,7 +14,8 @@ public class Magacin {
 	}
 
 	public void setArtikli(List<Artikal> artikli) {
-		this.artikli = artikli;
+		if (artikli != null)
+			this.artikli = artikli;
 	}
 
 	@Override
@@ -38,6 +39,5 @@ public class Magacin {
 	public String toString() {
 		return "Magacin [artikli=" + artikli + "]";
 	}
-	
-	
+
 }

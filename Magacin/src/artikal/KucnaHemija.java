@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 public class KucnaHemija extends Artikal {
-	
+
 	private GregorianCalendar rokTrajanja;
 
 	public GregorianCalendar getRokTrajanja() {
@@ -12,7 +12,8 @@ public class KucnaHemija extends Artikal {
 	}
 
 	public void setRokTrajanja(GregorianCalendar rokTrajanja) {
-		this.rokTrajanja = rokTrajanja;
+		if (rokTrajanja != null)
+			this.rokTrajanja = rokTrajanja;
 	}
 
 	@Override
@@ -37,8 +38,8 @@ public class KucnaHemija extends Artikal {
 
 	@Override
 	public String toString() {
-		return "Artikal [naziv=" + getNaziv() + ", sifra=" + getSifra() + ", opis=" + getOpis() + ", kolicina=" + getKolicina() + "rokTrajanja=" + rokTrajanja + "]";
+		return "Artikal [naziv=" + getNaziv() + ", sifra=" + getSifra() + ", opis=" + getOpis() + ", kolicina="
+				+ getKolicina() + "rokTrajanja=" + rokTrajanja + "]";
 	}
-	
-	
+
 }
