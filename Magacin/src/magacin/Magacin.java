@@ -1,5 +1,6 @@
 package magacin;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,7 +9,7 @@ import magacinInterface.MagacinInterface;
 
 public class Magacin implements MagacinInterface{
 
-	private List<Artikal> artikli;
+	private List<Artikal> artikli = new LinkedList<Artikal>();
 
 	public List<Artikal> getArtikli() {
 		return artikli;
@@ -45,19 +46,29 @@ public class Magacin implements MagacinInterface{
 	@Override
 	public void dodajArtikal(Artikal artikal) {
 		// TODO Auto-generated method stub
-		
+		for (Artikal a : artikli) {
+			if (artikal.getSifra() == a.getSifra()) {				
+				a.setKolicina(a.getKolicina() + artikal.getKolicina());
+				return;
+			}
+		}
+		artikli.add(artikal);
 	}
 
 	@Override
 	public void izbaciArtikal(Artikal artikal) {
 		// TODO Auto-generated method stub
-		
+		artikli.remove(artikal);
 	}
 
 	@Override
-	public Artikal vratiArtikal(int sifraArtikla) {
+	public Artikal vratiArtikal(int sifraArtikla) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		for (Artikal a : artikli) {
+			if(a.getSifra() == sifraArtikla)
+				return a;
+		}
+		throw new Exception("Artikal sa datom sifrom ne postoji");
 	}
 
 }
