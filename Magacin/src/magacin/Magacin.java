@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Objects;
 
 import artikal.Artikal;
+import magacinInterface.MagacinInterface;
 
-public class Magacin {
+public class Magacin implements MagacinInterface{
 
 	private List<Artikal> artikli;
 
@@ -38,6 +39,25 @@ public class Magacin {
 	@Override
 	public String toString() {
 		return "Magacin [artikli=" + artikli + "]";
+	}
+
+	
+	@Override
+	public void dodajArtikal(Artikal artikal) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void izbaciArtikal(Artikal artikal) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Artikal vratiArtikal(int sifraArtikla) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
