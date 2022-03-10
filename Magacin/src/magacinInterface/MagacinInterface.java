@@ -8,5 +8,5 @@ public interface MagacinInterface {
 	
 	void izbaciArtikal(Artikal artikal);
 	
-	Artikal vratiArtikal(int sifraArtikla);
+	Artikal vratiArtikal(int sifraArtikla) throws Exception;
 }
